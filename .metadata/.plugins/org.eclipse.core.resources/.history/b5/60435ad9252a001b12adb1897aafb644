@@ -1,0 +1,10 @@
+package com.cg.healthassist.model;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Hospital {
+	@Id
+	@GeneratedValue(Strategy = GenerationType.AUTO)
+	
+}

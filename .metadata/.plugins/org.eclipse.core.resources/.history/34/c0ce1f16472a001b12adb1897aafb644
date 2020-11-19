@@ -1,0 +1,10 @@
+package com.cg.healthassist;
+
+import org.junit.Test;
+
+public class HospitalDAOImplTest {
+	@Test
+	public void test_Persist_GivenPatient() {
+		
+	}
+}

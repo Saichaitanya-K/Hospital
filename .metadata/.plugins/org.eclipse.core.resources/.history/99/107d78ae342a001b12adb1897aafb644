@@ -1,0 +1,104 @@
+package com.cg.healthassist.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Hospital {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private String hospitalId;
+	private String hospitalName;
+	private String hospitalAddress;
+	private long hospitalPhNO;
+	/**
+	 * List of Hospitals
+	 */
+	private static List<Hospital> hospitalList = new ArrayList<>();
+	/**
+	 * Create an instance of hospital with given parameter
+	 * @param hospitalName
+	 * @param hospitalAddress
+	 * @param hospitalPhNO
+	 */
+	public Hospital(String hospitalName, String hospitalAddress, long hospitalPhNO) {
+		super();
+		this.hospitalName = hospitalName;
+		this.hospitalAddress = hospitalAddress;
+		this.hospitalPhNO = hospitalPhNO;
+	}
+	public Hospital() {
+		super();
+	}
+	/**
+	 * @return the hospital ID
+	 */
+	public String getHospitalId() {
+		return hospitalId;
+	}
+	/**
+	 * Set the hospital ID
+	 * @param hospitalId
+	 */
+	public void setHospitalId(String hospitalId) {
+		this.hospitalId = hospitalId;
+	}
+	/**
+	 * @return hospital name present
+	 */
+	public String getHospitalName() {
+		return hospitalName;
+	}
+	/**
+	 * Set the name of the hospital
+	 * @param hospitalName
+	 */
+	public void setHospitalName(String hospitalName) {
+		this.hospitalName = hospitalName;
+	}
+	/**
+	 * @return the hospital address
+	 */
+	public String getHospitalAddress() {
+		return hospitalAddress;
+	}
+	/**
+	 * Set the hospital address
+	 * @param hospitalAddress
+	 */
+	public void setHospitalAddress(String hospitalAddress) {
+		this.hospitalAddress = hospitalAddress;
+	}
+	/**
+	 * @return the hospital phone number 
+	 */
+	public long getHospitalPhNO() {
+		return hospitalPhNO;
+	}
+	public void setHospitalPhNO(long hospitalPhNO) {
+		this.hospitalPhNO = hospitalPhNO;
+	}
+	/**
+	 * @return the list of hospitals
+	 */
+	public static List<Hospital> getHospitalList() {
+		return hospitalList;
+	}
+	/**
+	 * Set the new hospital name to the list
+	 * @param hospitalName
+	 */
+	public static void setHospitalList(Hospital hospitalName) {
+		Hospital.hospitalList.add(hospitalName);
+	}
+	@Override
+	public String toString() {
+		return "Hospital [hospitalName=" + hospitalName + ", hospitalAddress=" + hospitalAddress + ", hospitalPhNO="
+				+ hospitalPhNO + "]";
+	}
+}

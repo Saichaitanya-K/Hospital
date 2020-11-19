@@ -1,0 +1,27 @@
+package com.cg.healthassist.dao;
+
+import java.util.List;
+
+import com.cg.healthassist.model.Hospital;
+import com.cg.healthassist.model.Patient;
+
+public interface HospitalDAO {
+	/**
+	 * This method will save data of the hospital in database
+	 * @param hospital instance of hospital to persist
+	 */
+	public void persist(Hospital hospital);
+	/**
+	 * This method will search hospital by its speciality in database
+	 * @param Speciality of the hospital to search
+	 * @return the instance of hospital if present else return null
+	 */
+	public Hospital findByHospitalSpeciality(String hospitalSpeciality);
+	/**
+	 * Give all the instance of hospitals present inside database
+	 * @return list of hospital instance
+	 */
+	public List<Hospital> findAll();
+	public Hospital findByHospitalId(long id);
+
+}

@@ -1,0 +1,10 @@
+
+V
+java:S11685"+Return an empty collection instead of null.(¥ΉοH<RMAJORZ
+CODE_SMELL
+L
+java:S1116V"Remove this empty statement.(ζέόÿÿÿÿH=RMINORZ
+CODE_SMELL
+n
+java:S11551">Use isEmpty() to check whether the collection is empty or not.(Υ¬εςÿÿÿÿÿH;RMINORZ
+CODE_SMELL

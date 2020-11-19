@@ -1,0 +1,38 @@
+package com.cg.healthassist.daoimpl;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import com.cg.healthassist.dao.HospitalDAO;
+import com.cg.healthassist.model.Hospital;
+
+public class HospitalDAOImpl implements HospitalDAO {
+
+	@Override
+	public void persist(Hospital hospital) {
+		EntityManager em = getEntityManager();
+		begin Transaction(em);
+		em.persist(Hospital);
+		String hospitalName = hospital.getHospitalName();
+	}
+
+	@Override
+	public Hospital findByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Hospital> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean update(Hospital hospital) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

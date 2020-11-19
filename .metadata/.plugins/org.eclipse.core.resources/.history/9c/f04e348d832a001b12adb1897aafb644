@@ -1,0 +1,35 @@
+package com.cg.healthassist;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.junit.Test;
+
+import com.cg.healthassist.daoimpl.HospitalDAOImpl;
+import com.cg.healthassist.model.Hospital;
+
+public class HospitalDAOImplTest {
+	@Test
+	public void test_Persist_GivenHospital() {
+		HospitalDAOImpl dao = new HospitalDAOImpl();
+		Hospital hospital = new Hospital("heart hospital", "mahishmathi", 9456231783L, "heart");
+		dao.persist(hospital);
+		Hospital hospitalFound = dao.findByHospitalId(hospital.getHospitalId());
+		assertEquals(hospital.getHospitalName(), hospitalFound.getHospitalName());
+	}
+	@Test
+	public void test_findByHospitalspeciality_GivenHospital_returnsHospitalList() {
+		HospitalDAOImpl dao = new HospitalDAOImpl();
+		Hospital hospital = new Hospital("heart hospital", "mahishmathi", 9456231783L, "heart");new Hospital("hospital", "mahi",954612370L,"heart");
+		dao.persist(hospital);
+		List<String> actual = Arrays.asList("heart hospital, hospital");
+		List<String> expected = Arrays.asList("heart hospital, hospital");
+		assertThat(actual, is(expected));
+		
+		
+	}
+}

@@ -1,0 +1,23 @@
+package com.cg.healthassist;
+
+import static org.junit.Assert.assertEquals;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Test;
+
+import com.cg.healthassist.daoimpl.HospitalDAOImpl;
+import com.cg.healthassist.model.Hospital;
+
+public class HospitalDAOImplTest {
+	@Test
+	public void test_Persist_GivenHospital() {
+		HospitalDAOImpl dao = new HospitalDAOImpl();
+		Hospital hospital = new Hospital("heart hospital", "mahishmathi", 9456231783L, "heart");
+		Hospital hospital1 = new Hospital("ENT hospital", "mahi", 9547812L,"heart");
+		List<Hospital> hospitalList=new ArrayList<>();
+		hospitalList.add(hospital1);
+	}
+	
+}
